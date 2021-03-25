@@ -1,4 +1,4 @@
-from metadata import *
+from .metadata import *
 
 
 class Genres(MetadataList, MetadataDetail):

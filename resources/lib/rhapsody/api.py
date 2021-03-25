@@ -245,7 +245,7 @@ class API:
             # params['catalog'] = self.token.catalog
             cache_data['user'] = self.token.username
 
-        cache_key = hashlib.sha1(json.dumps(cache_data)).hexdigest()
+        cache_key = hashlib.sha1(json.dumps(cache_data).encode()).hexdigest()
 
         response_text = None
         if self.ENABLE_CACHE and cache_timeout is not None and retry == 0:

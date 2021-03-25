@@ -1,4 +1,4 @@
-from metadata import *
+from .metadata import *
 
 
 class Tracks(MetadataList, MetadataDetail):
@@ -16,8 +16,8 @@ class Tracks(MetadataList, MetadataDetail):
 
     class List(Base):
         def __init__(self, data):
-            import albums
-            import artists
+            from . import albums
+            from . import artists
 
             super(Tracks.List, self).__init__(data)
             self.artist = artists.Artists.Base(data['artist'])

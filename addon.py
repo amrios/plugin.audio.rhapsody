@@ -636,13 +636,13 @@ def play(track_id, station_id=None):
                 plugin.add_to_playlist([next_item], playlist='music')
 
     # query the next playlist item so it'll be added to the cache for seamless playback
-    prefetch_enabled = plugin.get_setting('api_prefetch'.encode('utf-8'), converter=bool)
+    prefetch_enabled = plugin.get_setting('api_prefetch', converter=bool)
     if prefetch_enabled and rhapsody.ENABLE_CACHE:
         playlist = xbmc.PlayList(xbmc.PLAYLIST_MUSIC)
         next_pos = playlist.getposition() + 1
         if next_pos >= playlist.size():
             next_pos = 0
-        next_url = playlist[next_pos].getfilename()
+        next_url = playlist[next_pos].getPath()
 
         next_track_id = None
         url_patterns = [
@@ -686,7 +686,9 @@ if __name__ == '__main__':
     sys.path.append(os.path.join(plugin.addon.getAddonInfo('path'), 'resources', 'lib'))
 
     _ = plugin.get_string
-    cache = plugin.get_storage('data'.encode('utf-8'), ttl=0)
+#    cache = plugin.get_storage('data'.encode('utf-8'), ttl=0)
+    cache = plugin.get_storage('data', ttl=0)
+
 
     from helpers import Helpers
 
@@ -696,8 +698,8 @@ if __name__ == '__main__':
         from rhapsody import exceptions
 
         rhapsody = helpers.get_api()
-        rhapsody.ENABLE_DEBUG = plugin.get_setting('api_debug'.encode('utf-8'), converter=bool)
-        rhapsody.ENABLE_CACHE = not plugin.get_setting('api_cache_disable'.encode('utf-8'), converter=bool)
+        rhapsody.ENABLE_DEBUG = plugin.get_setting('api_debug', converter=bool)
+        rhapsody.ENABLE_CACHE = not plugin.get_setting('api_cache_disable', converter=bool)
         if not rhapsody.ENABLE_DEBUG and not rhapsody.ENABLE_CACHE:
             rhapsody.ENABLE_CACHE = True
             plugin.set_setting('api_cache_disable', '0')

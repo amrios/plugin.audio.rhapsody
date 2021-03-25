@@ -210,12 +210,12 @@ class Helpers:
         self._cache.cleanup()
 
     def _get_api(self):
-        api_key = self._plugin.get_setting('api_key', converter=unicode)
-        api_secret = self._plugin.get_setting('api_secret', converter=unicode)
+        api_key = self._plugin.get_setting('api_key', converter=str)
+        api_secret = self._plugin.get_setting('api_secret', converter=str)
         rhapsody = API(api_key, api_secret, cache_instance=self._cache, log_callback=self._plugin.log.info)
 
-        username = self._plugin.get_setting('username', converter=unicode)
-        password = self._plugin.get_setting('password', converter=unicode)
+        username = self._plugin.get_setting('username', converter=str)
+        password = self._plugin.get_setting('password', converter=str)
         rhapsody.login(username, password)
 
         return rhapsody
@@ -231,7 +231,7 @@ class Helpers:
             'AAC 192kBit/s': 1,
             'AAC 320kBit/s': 2,
         }
-        quality = qualities.get(self._plugin.get_setting('api_quality', converter=str), qualities['AAC 320kBit/s'])
+        quality = qualities.get(self._plugin.get_setting('api_quality', converter=bytes), qualities['AAC 320kBit/s'])
         while quality >= 0:
             try:
                 q = self.get_api().streams.QUALITIES[quality]

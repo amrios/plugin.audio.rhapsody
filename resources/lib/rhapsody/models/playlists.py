@@ -1,5 +1,5 @@
 from datetime import date
-from metadata import *
+from .metadata import *
 
 
 class Playlists(MetadataList, MetadataDetail):
@@ -15,7 +15,7 @@ class Playlists(MetadataList, MetadataDetail):
 
     class Detail(List):
         def __init__(self, data):
-            import tracks
+            from . import tracks
 
             super(Playlists.Detail, self).__init__(data)
             self.tracks = [tracks.Tracks.List(x) for x in data['tracks']]

@@ -1,5 +1,5 @@
 from datetime import date
-from metadata import *
+from .metadata import *
 
 
 class Albums(MetadataList, MetadataDetail):
@@ -15,8 +15,8 @@ class Albums(MetadataList, MetadataDetail):
                 self.name = data['name']
 
         def __init__(self, data):
-            import common
-            import artists
+            from . import common
+            from . import artists
 
             super(Albums.List, self).__init__(data)
             self.artist = artists.Artists.List(data['artist'])
@@ -29,7 +29,7 @@ class Albums(MetadataList, MetadataDetail):
 
     class Detail(List):
         def __init__(self, data):
-            import tracks
+            from . import tracks
 
             super(Albums.Detail, self).__init__(data)
             self.tracks = [tracks.Tracks.List(x) for x in data['tracks']]

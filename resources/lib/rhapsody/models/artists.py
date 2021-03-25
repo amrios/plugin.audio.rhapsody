@@ -1,4 +1,4 @@
-from metadata import *
+from .metadata import *
 
 
 class Artists(MetadataList, MetadataDetail):
@@ -33,7 +33,7 @@ class Artists(MetadataList, MetadataDetail):
         return self.list('top')
 
     def albums(self, artist_id):
-        import albums
+        from . import albums
 
         return self.list(artist_id + '/albums', limit=1000, model=albums.Albums.List)
 

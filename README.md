@@ -5,8 +5,8 @@ Rhapsody and Napster plugin for Kodi
 
 Requirements
 ------------
-* Kodi v16 (Jarvis)
-
+* Kodi v19 (Matrix)
+* amrios kodiswift (in releases)
 
 Features
 -------- 
@@ -19,15 +19,12 @@ Features
 * Listening history, user charts
 
 
-Recommended Setup (auto-update)
--------------------------------
-* Get the repository including the current version here:
-  https://raw.github.com/pogowurst/repository.pogowurst.addons/master/repository.pogowurst.addons/repository.pogowurst.addons-1.0.0.zip
-* Install the repository with the add zip file option inside add-on settings
-* Install "Rhapsody" from "Pogowurst Add-on Repository"
-
-
 Manual Setup
 ------------
 * Download the current release as a zip file
 * Install the add-on with the add zip file option inside add-on settings
+
+
+Notes
+------------
+* Kodiswift2 has been hacked up to support Python 3 "well enough" to support this plugin.

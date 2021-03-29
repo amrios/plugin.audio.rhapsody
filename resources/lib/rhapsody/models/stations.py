@@ -53,7 +53,7 @@ class StationsTracks(MetadataDetail):
                 self.variety = data['variety']
 
         def __init__(self, data):
-            import tracks
+            from . import tracks
 
             self.parameters = StationsTracks.StationTrack.Parameters(data['stationParameters'])
             self.tracks = [tracks.Tracks.List(x) for x in data['tracks']]

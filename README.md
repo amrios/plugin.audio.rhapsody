@@ -6,7 +6,7 @@ Rhapsody and Napster plugin for Kodi
 Requirements
 ------------
 * Kodi v19 (Matrix)
-* amrios kodiswift (in releases)
+* amrios kodiswift (in releases) or Kodi 19 compatible kodiswift
 
 Features
 -------- 

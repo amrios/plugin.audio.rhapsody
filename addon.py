@@ -418,10 +418,13 @@ def stations_detail(station_id):
     return items
 
 
+@plugin.route('/stations/<station_id>/play/<current_track_id>')
+def stations_play_track(station_id, current_track_id):
+    return play(track_id=current_track_id, station_id=station_id)
+
 @plugin.route('/stations/<station_id>/play')
 def stations_play(station_id):
     import xbmc
-
     current_track_id = plugin.request.args.get('current_track_id', [None])[0]
     if current_track_id is None:
         xbmc.PlayList(xbmc.PLAYLIST_MUSIC).clear()
@@ -429,7 +432,6 @@ def stations_play(station_id):
         current_track = rhapsody.tracks.detail(current_track_id)
         current_item = helpers.get_track_item(current_track)
         plugin.add_to_playlist([current_item], playlist='music')
-
     return play(track_id=current_track_id, station_id=station_id)
 
 
@@ -629,7 +631,7 @@ def play(track_id, station_id=None):
                 ))
                 next_item = helpers.get_track_item(next_track)
                 next_item['path'] = plugin.url_for(
-                    'stations_play',
+                    'stations_play_track',
                     station_id=station_id,
                     current_track_id=next_track.id
                 )

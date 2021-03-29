@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.audio.rhapsody" name="Rhapsody" version="2.4.2" provider-name="pogowurst">
+<addon id="plugin.audio.rhapsody" name="Rhapsody" version="2.5.0" provider-name="amrios">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.kodiswift" version="0.0.8"/>
@@ -9,7 +9,7 @@
         <provides>audio</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">Rhapsody music add-on</summary>
+        <summary lang="en">Rhapsody Music Add-on</summary>
         <description lang="en">
             <![CDATA[Listen to over 35 million songs in the Rhapsody music catalog. Manage your music library and playlists in a comfortable way. Use top artists, albums and tracks or radio stations to discover something new. A Rhapsody subscription is required.]]>
         </description>
@@ -18,6 +18,11 @@
             <![CDATA[Höre mehr als 35 Millionen Songs aus dem Rhapsody Musikkatalog. Verwalte bequem deine Musikbibliothek und Wiedergabelisten. Verwende Top-Künstler, Alben und Titel oder Radiosender um etwas Neues zu entdecken. Eine kostenpflichtige Rhapsody-Mitgliedschaft wird benötigt.]]>
         </description>
         <news><![CDATA[
+v2.5.0  (2021-03-29)
+- Updated for Kodi v19 Matrix
+- Added quality setting MP3 128kBit/s
+- Fixed station playback
+
 v2.4.2  (2019-01-02)
 - Added Python 3 compatibility
 
@@ -36,7 +41,7 @@ v2.4.0  (2019-01-01)
         <forum/>
         <website/>
         <email/>
-        <source>https://github.com/pogowurst/plugin.audio.rhapsody</source>
+        <source>https://github.com/amrios/plugin.audio.rhapsody</source>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>

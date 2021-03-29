@@ -228,8 +228,9 @@ class Helpers:
     def get_stream(self, track_id):
         qualities = {
             'AAC+ 64kBit/s': 0,
-            'AAC 192kBit/s': 1,
-            'AAC 320kBit/s': 2,
+            'MP3 128kBit/s': 1,
+            'AAC 192kBit/s': 2,
+            'AAC 320kBit/s': 3,
         }
         quality = qualities.get(self._plugin.get_setting('api_quality', converter=bytes), qualities['AAC 320kBit/s'])
         while quality >= 0:

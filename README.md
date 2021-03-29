@@ -28,3 +28,4 @@ Manual Setup
 Notes
 ------------
 * Kodiswift2 has been hacked up to support Python 3 "well enough" to support this plugin.
+* Gapless playback is only possible on MP3 128 kBit/s quality. This is probably a Kodi limitation.

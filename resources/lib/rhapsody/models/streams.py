@@ -22,13 +22,18 @@ class Format(object):
 
 
 class Streams(MetadataDetail):
-    FORMAT_AAC = 'AAC'
     FORMAT_AAC_PLUS = 'AAC PLUS'
+    FORMAT_MP3 = 'MP3'
+    FORMAT_AAC = 'AAC'
+    FORMAT_FLAC = 'FLAC' # In the future
     BITRATE_64 = 64
+    BITRATE_128 = 128
     BITRATE_192 = 192
     BITRATE_320 = 320
+    BITRATE_FLAC = 44100 # In the future
     QUALITIES = (
         (FORMAT_AAC_PLUS, BITRATE_64),
+        (FORMAT_MP3, BITRATE_128),
         (FORMAT_AAC, BITRATE_192),
         (FORMAT_AAC, BITRATE_320),
     )

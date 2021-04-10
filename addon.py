@@ -5,7 +5,7 @@ import os
 import sys
 import traceback
 
-from kodiswift import Plugin
+from xbmcswift2 import Plugin
 
 
 plugin = Plugin()
@@ -367,7 +367,7 @@ def playlists_library_detail(playlist_id):
 
 @plugin.route('/playlists/library/select/<track_id>')
 def playlists_library_select(track_id):
-    from kodiswift import xbmcgui
+    from xbmcswift2 import xbmcgui
 
     playlists = rhapsody.library.playlists()
     idx = xbmcgui.Dialog().select(_(30214), [x.name for x in playlists])
@@ -688,8 +688,7 @@ if __name__ == '__main__':
     sys.path.append(os.path.join(plugin.addon.getAddonInfo('path'), 'resources', 'lib'))
 
     _ = plugin.get_string
-#    cache = plugin.get_storage('data'.encode('utf-8'), ttl=0)
-    cache = plugin.get_storage('data', ttl=0)
+    cache = plugin.get_storage('data')
 
 
     from helpers import Helpers

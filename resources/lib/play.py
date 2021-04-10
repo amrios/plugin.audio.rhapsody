@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 import datetime
 
-from kodiswift import xbmc
+from xbmcswift2 import xbmc
 
 
 class Notify(object):

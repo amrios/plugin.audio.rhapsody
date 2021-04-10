@@ -1,2 +1,2 @@
 requests>=2.4.3
-kodiswift>=0.0.8
+xbmcswift2>=19.0.5

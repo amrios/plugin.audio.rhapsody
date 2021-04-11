@@ -418,10 +418,6 @@ def stations_detail(station_id):
     return items
 
 
-@plugin.route('/stations/<station_id>/play/<current_track_id>')
-def stations_play_track(station_id, current_track_id):
-    return play(track_id=current_track_id, station_id=station_id)
-
 @plugin.route('/stations/<station_id>/play')
 def stations_play(station_id):
     import xbmc
@@ -631,7 +627,7 @@ def play(track_id, station_id=None):
                 ))
                 next_item = helpers.get_track_item(next_track)
                 next_item['path'] = plugin.url_for(
-                    'stations_play_track',
+                    'stations_play',
                     station_id=station_id,
                     current_track_id=next_track.id
                 )

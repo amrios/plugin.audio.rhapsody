@@ -2,7 +2,7 @@
 <addon id="plugin.audio.rhapsody" name="Rhapsody" version="2.5.0" provider-name="amrios">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
-        <import addon="script.module.kodiswift" version="0.0.8"/>
+        <import addon="script.module.xbmcswift2" version="19.0.5"/>
         <import addon="script.module.requests" version="2.4.3"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="addon.py">

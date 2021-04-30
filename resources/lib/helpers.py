@@ -1,6 +1,6 @@
 from __future__ import absolute_import, division, unicode_literals
 
-from kodiswift import actions
+from xbmcswift2 import actions
 
 from rhapsody.api import API
 from rhapsody.cache import Base as BaseCache
@@ -16,7 +16,7 @@ class Helpers:
         def get_storage(self, timeout):
             timeout = int(timeout / 60)
             if timeout not in self.storages:
-                self.storages[timeout] = self._plugin.get_storage('rhapsody.{0:d}'.format(timeout), ttl=timeout)
+                self.storages[timeout] = self._plugin.get_storage('rhapsody.{0:d}'.format(timeout))
             return self.storages[timeout]
 
         def get(self, key, timeout):
@@ -232,7 +232,7 @@ class Helpers:
             'AAC 192kBit/s': 2,
             'AAC 320kBit/s': 3,
         }
-        quality = qualities.get(self._plugin.get_setting('api_quality', converter=bytes), qualities['AAC 320kBit/s'])
+        quality = qualities.get(self._plugin.get_setting('api_quality', converter=str), qualities['AAC 320kBit/s'])
         while quality >= 0:
             try:
                 q = self.get_api().streams.QUALITIES[quality]

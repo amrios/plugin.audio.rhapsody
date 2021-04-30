@@ -1,5 +1,6 @@
 plugin.audio.rhapsody
 =====================
+NOTICE: The original project seems active now and works with Kodi 19, so I am no longer maintaining this fork for basic functionality.
 
 Rhapsody and Napster plugin for Kodi
 
